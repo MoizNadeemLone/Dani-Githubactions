@@ -11,17 +11,17 @@ jobs:
     steps:
       - name: Print Regular Variables
         run: |
-          echo "Position: ${{ secrets.Position }}"
-          echo "Roll No: ${{ secrets.RollNo }}"
-          echo "Name: ${{ secrets.Name }}"
+          echo "Position: ${{ secrets.POSITION }}"
+          echo "Roll No: ${{ secrets.ROLLNO }}"
+          echo "Name: ${{ secrets.NAME }}"
 
   Secret_Variables:
     runs-on: ubuntu-latest  # You can change the OS if needed (e.g., windows-latest)
     steps:
       - name: Print Secret Variables
         run: |
-          echo "Login ID: ${{ secrets.LoginID }}"
-          echo "Password: ${{ secrets.Password }}"
+          echo "Login ID: ${{ secrets.LOGINID }}"
+          echo "Password: ${{ secrets.PASSWORD }}"
         env:
-          LoginID: ${{ secrets.LoginID }}
-          Password: ${{ secrets.Password }}
+          LoginID: ${{ secrets.LOGINID }}
+          Password: ${{ secrets.PASSWORD }}
