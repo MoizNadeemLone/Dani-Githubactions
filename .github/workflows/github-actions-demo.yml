@@ -1,0 +1,27 @@
+name: Print Variables
+
+on:
+  push:
+    branches:
+      - main  # Trigger this action when pushing to the main branch (or adjust as needed)
+
+jobs:
+  Regular_Variables:
+    runs-on: ubuntu-latest  # You can change the OS if needed (e.g., windows-latest)
+    steps:
+      - name: Print Regular Variables
+        run: |
+          echo "Position: ${{ secrets.Position }}"
+          echo "Roll No: ${{ secrets.RollNo }}"
+          echo "Name: ${{ secrets.Name }}"
+
+  Secret_Variables:
+    runs-on: ubuntu-latest  # You can change the OS if needed (e.g., windows-latest)
+    steps:
+      - name: Print Secret Variables
+        run: |
+          echo "Login ID: ${{ secrets.LoginID }}"
+          echo "Password: ${{ secrets.Password }}"
+        env:
+          LoginID: ${{ secrets.LoginID }}
+          Password: ${{ secrets.Password }}
