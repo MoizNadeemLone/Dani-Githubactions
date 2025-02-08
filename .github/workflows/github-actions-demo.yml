@@ -11,9 +11,10 @@ jobs:
     steps:
       - name: Print Regular Variables
         run: |
-          echo "Position: ${{ secrets.POSITION }}"
-          echo "Roll No: ${{ secrets.ROLLNO }}"
-          echo "Name: ${{ secrets.NAME }}"
+          echo "Position: ${{ vars.POSITION }}"
+          echo "Roll No: ${{ vars.ROLLNO }}"
+          echo "Name: ${{ vars.NAME }}"
+
 
   Secret_Variables:
     runs-on: ubuntu-latest  # You can change the OS if needed (e.g., windows-latest)
